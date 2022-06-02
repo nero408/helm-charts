@@ -29,6 +29,11 @@ spec:
 {{ toYaml . | indent 8 }}
     {{- end }}
     spec:
+      {{- if .Values.persistence.matchLabels }}
+      selector:
+        matchLabels:
+        {{- tpl (toYaml .Values.persistence.matchLabels) . | nindent 10 }}
+      {{- end }}
       accessModes:
       {{- range .Values.persistence.accessModes }}
       - {{ . | quote }}

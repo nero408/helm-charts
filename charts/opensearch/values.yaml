@@ -189,6 +189,9 @@ persistence:
   labels:
     # Add default labels for the volumeClaimTemplate of the StatefulSet
     enabled: false
+  # Define Labels used to match a specific Persistent Volume
+  # matchLabels:
+  #   name: example-opensearch-pv
   # OpenSearch Persistent Volume Storage Class
   # If defined, storageClassName: <storageClass>
   # If set to "-", storageClassName: "", which disables dynamic provisioning
